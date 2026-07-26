@@ -14,6 +14,7 @@ The application lets users submit a natural-language query and view multiple ret
 - Embedding-style retrieval results
 - Gradient descent summary for a simple linear model
 - Failure analysis for ambiguous or out-of-domain queries
+- Embedding search similarity
 
 ## Project Structure
 Copied from Powershell.
@@ -96,3 +97,5 @@ The repository now includes:
 ## Notes
 
 The current implementation uses a deterministic fallback embedding strategy when a pretrained sentence-transformer model is unavailable, which makes the project reproducible in a classroom environment.
+## Prompt Filtering
+Added a strong pronpt filtering including, hidden symbels, random symbels and promopt ignoring.
