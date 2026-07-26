@@ -12,7 +12,7 @@ The application lets users submit a natural-language query and view multiple ret
 - TF-IDF ranking results
 - Cosine similarity comparison
 - Embedding-style retrieval results
-- Gradient descent summary for a simple linear model
+- Simple gradient summury showing how it works, showing its loss, w and b.
 - Failure analysis for ambiguous or out-of-domain queries
 - Embedding search similarity
 
@@ -97,5 +97,11 @@ The repository now includes:
 ## Notes
 
 The current implementation uses a deterministic fallback embedding strategy when a pretrained sentence-transformer model is unavailable, which makes the project reproducible in a classroom environment.
+
 ## Prompt Filtering
-Added a strong pronpt filtering including, hidden symbels, random symbels and promopt ignoring.
+
+Added a strong pronpt filtering including, hidden symbels, random symbels and promopt ignoring, also a comparation of the system before filtering and system after filtering.  
+The result increase from 50% to 100%
+
+## Learn more
+there are also information in project reflection.md, dataset.txt, example.png(3 of them) for see what is the result and requirement.txt.
