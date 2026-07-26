@@ -1,6 +1,6 @@
 # Week21_AI_Semantic_Search_Assistant
 
-This project is a compact Flask-based semantic search assistant that compares TF-IDF, dense vector similarity, Euclidean distance, and a simple gradient descent demo in one runnable package.
+This project is a compact Flask-based semantic search assistant that compares TF-IDF, dense vector similarity, and a simple gradient descent demo in one runnable package.
 
 ## Overview
 
@@ -18,6 +18,7 @@ The application lets users submit a natural-language query and view multiple ret
 ## Project Structure
 Copied from Powershell.
 ```text
+D:.
 │  app.py
 │  dataset.txt
 │  prompt_filter.py
