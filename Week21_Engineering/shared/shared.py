@@ -1,13 +1,16 @@
 import os
+import json
 import numpy as np
-
 from sentence_transformers import SentenceTransformer
 
-def load_documents(path="dataset.txt"):
+def load_documents_from_json(path="dataset.json"):
     if not os.path.exists(path):
         return []
+
     with open(path, "r", encoding="utf-8") as f:
-        docs = [line.strip() for line in f.readlines() if line.strip()]
+        data = json.load(f)
+
+    docs = [item["text"] for item in data if "text" in item]
     return docs
 
 _embedding_model = None
@@ -18,13 +21,11 @@ def get_embedding_model():
         _embedding_model = SentenceTransformer("sentence-transformers/all-MiniLM-L6-v2")
     return _embedding_model
 
-
 def encode_texts(texts):
     model = get_embedding_model()
     if isinstance(texts, str):
         texts = [texts]
     return model.encode(texts, convert_to_numpy=True)
-
 
 def cosine_similarity(a, b):
     if isinstance(a, str):
