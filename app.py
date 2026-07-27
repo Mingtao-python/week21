@@ -1,6 +1,8 @@
 from flask import Flask, render_template, request
 
 from prompt_filter import filter_prompt
+from record import add_record
+
 from Week21_Engineering.Implementation1.Similarity_Engine.similarity import cosine_similarity
 from Week21_Engineering.Implementation2.TFIDF_Retrieval.tfidf_search import search
 from Week21_Engineering.Implementation3.Embedding_Similarity.embedding_similarity import cosine
@@ -8,11 +10,9 @@ from Week21_Engineering.Implementation4.Vector_Search.vector_search import top_k
 from Week21_Engineering.Implementation5.Embedding_Search.embedding_search import search2
 from Week21_Engineering.Implementation6.Gradient_Descent.gradient_descent_demo import run_gradient_demo
 from Week21_Engineering.Implementation7.Embedding_Failure_Analysis.embedding_failure_analysis import find_failure_cases
-from prompt_filter import filter_prompt
 
 app = Flask(__name__)
 app.config["JSON_SORT_KEYS"] = False
-
 
 @app.route("/", methods=["GET", "POST"])
 def index():
@@ -20,11 +20,9 @@ def index():
     q = request.form.get("query", "").strip()
 
     if request.method == "POST":
-        isok, reason = filter_prompt(str(q))
-        if not isok:
-            return render_template("index.html", error=reason, selected_algorithm=selected_algorithm)
         ok, message = filter_prompt(q)
         if not ok:
+            add_record(q, None, "error", False, message)
             return render_template("index.html", error=message, selected_algorithm=selected_algorithm)
 
         cosine_result = cosine_similarity(q, "semantic search over documents")
@@ -35,6 +33,23 @@ def index():
         embedding_results = search2(q)
         gradient_summary = run_gradient_demo(learning_rate=0.01, epochs=200)
         failure_cases = find_failure_cases(q)
+
+        add_record(
+            q,
+            {
+                "cosine": cosine_result,
+                "tfidf": tfidf_results,
+                "embedding_matrix": embedding_matrix,
+                "vector": vector_results,
+                "euclidean": euclidean_results,
+                "embedding": embedding_results,
+                "gradient": gradient_summary,
+                "failures": failure_cases
+            },
+            "ok",
+            True,
+            ""
+        )
 
         return render_template(
             "index.html",
@@ -63,7 +78,6 @@ def index():
         failure_cases=[],
         selected_algorithm="cosine",
     )
-
 
 if __name__ == "__main__":
     app.run(debug=False, host="0.0.0.0", port=5000)

@@ -1,7 +1,7 @@
 import os
 import re
 
-ROOT = "Week21_Engineering"  # 你的工程根目录
+ROOT = "Week21_Engineering"
 
 def fix_file(path):
     with open(path, "r", encoding="utf-8") as f:
@@ -9,14 +9,12 @@ def fix_file(path):
 
     original = content
 
-    # 修复 import
     content = re.sub(
         r"from (.+?) import load_documents\b",
         r"from \1 import load_documents_from_json",
         content
     )
 
-    # 修复调用
     content = re.sub(
         r"\bload_documents\(\)",
         r'load_documents_from_json("dataset.json")',
