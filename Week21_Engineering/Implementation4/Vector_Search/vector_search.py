@@ -1,9 +1,7 @@
 import numpy as np
+from Week21_Engineering.shared.shared import encode_texts, load_documents_from_json
 
-from Week21_Engineering.shared.shared import encode_texts, load_documents
-
-
-docs = load_documents()
+docs = load_documents_from_json("dataset.json")
 doc_vecs = encode_texts(docs)
 
 

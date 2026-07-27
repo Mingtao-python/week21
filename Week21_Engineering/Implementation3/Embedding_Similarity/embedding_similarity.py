@@ -1,8 +1,7 @@
 import numpy as np
+from Week21_Engineering.shared.shared import encode_texts, load_documents_from_json
 
-from Week21_Engineering.shared.shared import encode_texts, load_documents
-
-texts = load_documents()
+texts = load_documents_from_json("dataset.json")
 emb = encode_texts(texts)
 
 

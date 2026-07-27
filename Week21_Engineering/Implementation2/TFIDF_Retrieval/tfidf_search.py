@@ -1,10 +1,9 @@
 import numpy as np
 from sklearn.feature_extraction.text import TfidfVectorizer
+from Week21_Engineering.shared.shared import load_documents_from_json
 
-from Week21_Engineering.shared.shared import load_documents
 
-
-docs = load_documents()
+docs = load_documents_from_json("dataset.json")
 vectorizer = TfidfVectorizer()
 X = vectorizer.fit_transform(docs)
 
