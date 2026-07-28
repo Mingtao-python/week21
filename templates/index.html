@@ -39,7 +39,21 @@
 
 <h2>Failure Analysis</h2>
 {% for item in failure_cases %}
-<p>{{ item }}</p>
+<p><b>{{ item.summary }}</b></p>
+<p>Query: {{ item.query }}</p>
+<p>Expected: {{ item.expected_document }}</p>
+
+<p>Ranking:</p>
+<ul>
+  <li>Embedding: {{ item.analysis.embedding_rank }}</li>
+  <li>Cosine: {{ item.analysis.cosine_rank }}</li>
+  <li>Euclidean: {{ item.analysis.euclidean_rank }}</li>
+  <li>TF‑IDF: {{ item.analysis.tfidf_rank }}</li>
+</ul>
+
+<p>Reason: {{ item.likely_reason }}</p>
+<p>Recommendation: {{ item.recommendation }}</p>
+<hr>
 {% endfor %}
 
 </body>

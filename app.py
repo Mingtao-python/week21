@@ -29,8 +29,9 @@ def index():
         tfidf_results = tfidf_search(q)
         embedding_results = search2(q)
         gradient_summary = run_gradient_demo()
-        failure_cases = find_failure_cases(q)
-
+        tfidf_top = tfidf_search(q)
+        expected = [tfidf_top[0][0]] if tfidf_top else []
+        failure_cases = find_failure_cases(q, expected_ids=expected)
         add_record(q, {
             "cosine": cosine_results,
             "euclidean": euclidean_results,
