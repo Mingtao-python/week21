@@ -1,5 +1,5 @@
 import numpy as np
-from shared.shared import documents, document_vectors, encode_texts
+from Week21_Engineering.shared.shared import documents, document_vectors, encode_texts
 from Implementation1.Similarity_Engine.similarity import cosine_similarity, euclidean_distance
 
 def top_k(query, k=5):

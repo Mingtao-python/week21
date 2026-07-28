@@ -1,5 +1,5 @@
 import numpy as np
-from shared.shared import documents, document_vectors, encode_texts
+from Week21_Engineering.shared.shared import documents, document_vectors
 
 def cosine():
     n = len(documents)

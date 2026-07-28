@@ -1,6 +1,6 @@
 import numpy as np
 from sklearn.feature_extraction.text import TfidfVectorizer
-from shared.shared import documents
+from Week21_Engineering.shared.shared import documents
 
 vectorizer = TfidfVectorizer()
 X = vectorizer.fit_transform(documents)

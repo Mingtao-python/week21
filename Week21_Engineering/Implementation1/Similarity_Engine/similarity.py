@@ -1,5 +1,5 @@
 import numpy as np
-from shared.shared import encode_texts
+from Week21_Engineering.shared.shared import encode_texts
 
 def cosine_similarity(a, b):
     if isinstance(a, str):

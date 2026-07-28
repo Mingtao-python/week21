@@ -1,5 +1,5 @@
 import numpy as np
-from shared.shared import documents, document_vectors, encode_texts
+from Week21_Engineering.shared.shared import documents, document_vectors, encode_texts
 
 def search2(query, k=5):
     qv = encode_texts(query)[0]
