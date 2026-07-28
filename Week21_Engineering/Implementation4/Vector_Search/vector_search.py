@@ -1,6 +1,6 @@
 import numpy as np
 from Week21_Engineering.shared.shared import documents, document_vectors, encode_texts
-from Implementation1.Similarity_Engine.similarity import cosine_similarity, euclidean_distance
+from Week21_Engineering.Implementation1.Similarity_Engine.similarity import cosine_similarity, euclidean_distance
 
 def top_k(query, k=5):
     qv = encode_texts(query)[0]

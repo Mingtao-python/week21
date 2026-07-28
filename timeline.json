@@ -12006,5 +12006,587 @@
     "status": "ok",
     "ifsuccess": true,
     "reason": ""
+  },
+  {
+    "time": "2026-07-28T12:43:46.740698",
+    "question": "learning",
+    "result": {
+      "cosine": [
+        [
+          "Reinforcement learning optimizes actions using rewards.",
+          0.5113489627838135
+        ],
+        [
+          "Supervised learning uses labeled data for training.",
+          0.48898786306381226
+        ],
+        [
+          "Datasets contain samples used for learning.",
+          0.4839640259742737
+        ],
+        [
+          "Learning rate controls the size of parameter updates.",
+          0.4549092948436737
+        ],
+        [
+          "Machine learning is a field of artificial intelligence.",
+          0.45108771324157715
+        ]
+      ],
+      "euclidean": [
+        [
+          "Reinforcement learning optimizes actions using rewards.",
+          0.9885858297348022
+        ],
+        [
+          "Supervised learning uses labeled data for training.",
+          1.0109522342681885
+        ],
+        [
+          "Datasets contain samples used for learning.",
+          1.0159094333648682
+        ],
+        [
+          "Learning rate controls the size of parameter updates.",
+          1.0441175699234009
+        ],
+        [
+          "Machine learning is a field of artificial intelligence.",
+          1.0477713346481323
+        ]
+      ],
+      "tfidf": [
+        [
+          "Supervised learning uses labeled data for training.",
+          0.2997864108308846
+        ],
+        [
+          "Datasets contain samples used for learning.",
+          0.29299649922413984
+        ],
+        [
+          "Reinforcement learning optimizes actions using rewards.",
+          0.2852345720517412
+        ],
+        [
+          "Machine learning is a field of artificial intelligence.",
+          0.28162690088666753
+        ],
+        [
+          "Unsupervised learning discovers patterns in unlabeled data.",
+          0.2794816249517442
+        ]
+      ],
+      "embedding": [
+        [
+          "Reinforcement learning optimizes actions using rewards.",
+          0.5113490223884583
+        ],
+        [
+          "Supervised learning uses labeled data for training.",
+          0.48898786306381226
+        ],
+        [
+          "Datasets contain samples used for learning.",
+          0.4839639663696289
+        ],
+        [
+          "Learning rate controls the size of parameter updates.",
+          0.4549092948436737
+        ],
+        [
+          "Machine learning is a field of artificial intelligence.",
+          0.4510877728462219
+        ]
+      ]
+    },
+    "status": "ok",
+    "ifsuccess": true,
+    "reason": ""
+  },
+  {
+    "time": "2026-07-28T12:44:18.104226",
+    "question": "bank",
+    "result": {
+      "cosine": [
+        [
+          "Classification predicts discrete labels.",
+          0.12591612339019775
+        ],
+        [
+          "Machine learning is a field of artificial intelligence.",
+          0.11873647570610046
+        ],
+        [
+          "Features describe the properties of data.",
+          0.11473880708217621
+        ],
+        [
+          "Artificial intelligence can classify documents.",
+          0.111770860850811
+        ],
+        [
+          "F1 score balances precision and recall.",
+          0.11059302091598511
+        ]
+      ],
+      "euclidean": [
+        [
+          "Classification predicts discrete labels.",
+          1.3221828937530518
+        ],
+        [
+          "Machine learning is a field of artificial intelligence.",
+          1.3276020288467407
+        ],
+        [
+          "Features describe the properties of data.",
+          1.3306097984313965
+        ],
+        [
+          "Artificial intelligence can classify documents.",
+          1.3328384160995483
+        ],
+        [
+          "F1 score balances precision and recall.",
+          1.3337218761444092
+        ]
+      ],
+      "tfidf": [
+        [
+          "AI can extract keywords from documents.",
+          0.0
+        ],
+        [
+          "AI can analyze sentiment in text.",
+          0.0
+        ],
+        [
+          "AI can generate realistic images using GANs.",
+          0.0
+        ],
+        [
+          "AI can segment images pixel by pixel.",
+          0.0
+        ],
+        [
+          "AI can detect objects in photos.",
+          0.0
+        ]
+      ],
+      "embedding": [
+        [
+          "Classification predicts discrete labels.",
+          0.12591609358787537
+        ],
+        [
+          "Machine learning is a field of artificial intelligence.",
+          0.11873646825551987
+        ],
+        [
+          "Features describe the properties of data.",
+          0.1147388219833374
+        ],
+        [
+          "Artificial intelligence can classify documents.",
+          0.1117708683013916
+        ],
+        [
+          "F1 score balances precision and recall.",
+          0.11059302091598511
+        ]
+      ]
+    },
+    "status": "ok",
+    "ifsuccess": true,
+    "reason": ""
+  },
+  {
+    "time": "2026-07-28T12:44:29.281576",
+    "question": "machine learning",
+    "result": {
+      "cosine": [
+        [
+          "Machine learning is a field of artificial intelligence.",
+          0.6315712332725525
+        ],
+        [
+          "Classification predicts discrete labels.",
+          0.4675934612751007
+        ],
+        [
+          "Supervised learning uses labeled data for training.",
+          0.46756455302238464
+        ],
+        [
+          "AI can detect anomalies in data.",
+          0.4658038914203644
+        ],
+        [
+          "Artificial intelligence can classify documents.",
+          0.4513784945011139
+        ]
+      ],
+      "euclidean": [
+        [
+          "Machine learning is a field of artificial intelligence.",
+          0.8584041595458984
+        ],
+        [
+          "Classification predicts discrete labels.",
+          1.031897783279419
+        ],
+        [
+          "Supervised learning uses labeled data for training.",
+          1.031925916671753
+        ],
+        [
+          "AI can detect anomalies in data.",
+          1.033630609512329
+        ],
+        [
+          "Artificial intelligence can classify documents.",
+          1.047493815422058
+        ]
+      ],
+      "tfidf": [
+        [
+          "Machine learning is a field of artificial intelligence.",
+          0.5194892800279335
+        ],
+        [
+          "Supervised learning uses labeled data for training.",
+          0.16252100102181039
+        ],
+        [
+          "Datasets contain samples used for learning.",
+          0.1588400362038278
+        ],
+        [
+          "Reinforcement learning optimizes actions using rewards.",
+          0.1546321197395013
+        ],
+        [
+          "Unsupervised learning discovers patterns in unlabeled data.",
+          0.1515133168593919
+        ]
+      ],
+      "embedding": [
+        [
+          "Machine learning is a field of artificial intelligence.",
+          0.6315712332725525
+        ],
+        [
+          "Classification predicts discrete labels.",
+          0.4675934314727783
+        ],
+        [
+          "Supervised learning uses labeled data for training.",
+          0.46756452322006226
+        ],
+        [
+          "AI can detect anomalies in data.",
+          0.465803861618042
+        ],
+        [
+          "Artificial intelligence can classify documents.",
+          0.4513784646987915
+        ]
+      ]
+    },
+    "status": "ok",
+    "ifsuccess": true,
+    "reason": ""
+  },
+  {
+    "time": "2026-07-28T12:45:13.991655",
+    "question": "models",
+    "result": {
+      "cosine": [
+        [
+          "Deep learning uses neural networks to model complex relationships.",
+          0.43463635444641113
+        ],
+        [
+          "Evaluation measures model performance.",
+          0.4184430241584778
+        ],
+        [
+          "AI models require large datasets for training.",
+          0.40634390711784363
+        ],
+        [
+          "Gradient descent updates model parameters iteratively.",
+          0.39603525400161743
+        ],
+        [
+          "AI models can overfit when trained too long.",
+          0.37952688336372375
+        ]
+      ],
+      "euclidean": [
+        [
+          "Deep learning uses neural networks to model complex relationships.",
+          1.063356637954712
+        ],
+        [
+          "Evaluation measures model performance.",
+          1.0784775018692017
+        ],
+        [
+          "AI models require large datasets for training.",
+          1.089638590812683
+        ],
+        [
+          "Gradient descent updates model parameters iteratively.",
+          1.0990585088729858
+        ],
+        [
+          "AI models can overfit when trained too long.",
+          1.1139776706695557
+        ]
+      ],
+      "tfidf": [
+        [
+          "AI models require large datasets for training.",
+          0.4026664807763768
+        ],
+        [
+          "AI models can overfit when trained too long.",
+          0.36495357562164665
+        ],
+        [
+          "AI can generate realistic images using GANs.",
+          0.0
+        ],
+        [
+          "AI can segment images pixel by pixel.",
+          0.0
+        ],
+        [
+          "AI can detect objects in photos.",
+          0.0
+        ]
+      ],
+      "embedding": [
+        [
+          "Deep learning uses neural networks to model complex relationships.",
+          0.4346363842487335
+        ],
+        [
+          "Evaluation measures model performance.",
+          0.4184430241584778
+        ],
+        [
+          "AI models require large datasets for training.",
+          0.406343936920166
+        ],
+        [
+          "Gradient descent updates model parameters iteratively.",
+          0.39603525400161743
+        ],
+        [
+          "AI models can overfit when trained too long.",
+          0.37952691316604614
+        ]
+      ]
+    },
+    "status": "ok",
+    "ifsuccess": true,
+    "reason": ""
+  },
+  {
+    "time": "2026-07-28T12:45:50.306211",
+    "question": "english",
+    "result": {
+      "cosine": [
+        [
+          "AI can translate languages automatically.",
+          0.3248801529407501
+        ],
+        [
+          "Python is a programming language.",
+          0.3022260069847107
+        ],
+        [
+          "Natural language processing enables computers to understand text.",
+          0.25092586874961853
+        ],
+        [
+          "Labels indicate the correct output for supervised learning.",
+          0.17025429010391235
+        ],
+        [
+          "AI can summarize long documents.",
+          0.16769738495349884
+        ]
+      ],
+      "euclidean": [
+        [
+          "AI can translate languages automatically.",
+          1.1619981527328491
+        ],
+        [
+          "Python is a programming language.",
+          1.1813331842422485
+        ],
+        [
+          "Natural language processing enables computers to understand text.",
+          1.2239887714385986
+        ],
+        [
+          "Labels indicate the correct output for supervised learning.",
+          1.288212537765503
+        ],
+        [
+          "AI can summarize long documents.",
+          1.2901958227157593
+        ]
+      ],
+      "tfidf": [
+        [
+          "AI can extract keywords from documents.",
+          0.0
+        ],
+        [
+          "AI can analyze sentiment in text.",
+          0.0
+        ],
+        [
+          "AI can generate realistic images using GANs.",
+          0.0
+        ],
+        [
+          "AI can segment images pixel by pixel.",
+          0.0
+        ],
+        [
+          "AI can detect objects in photos.",
+          0.0
+        ]
+      ],
+      "embedding": [
+        [
+          "AI can translate languages automatically.",
+          0.32488012313842773
+        ],
+        [
+          "Python is a programming language.",
+          0.3022259771823883
+        ],
+        [
+          "Natural language processing enables computers to understand text.",
+          0.25092586874961853
+        ],
+        [
+          "Labels indicate the correct output for supervised learning.",
+          0.17025429010391235
+        ],
+        [
+          "AI can summarize long documents.",
+          0.16769737005233765
+        ]
+      ]
+    },
+    "status": "ok",
+    "ifsuccess": true,
+    "reason": ""
+  },
+  {
+    "time": "2026-07-28T12:46:02.181474",
+    "question": "GAN",
+    "result": {
+      "cosine": [
+        [
+          "AI can generate realistic images using GANs.",
+          0.5171443819999695
+        ],
+        [
+          "AI can segment images pixel by pixel.",
+          0.23410674929618835
+        ],
+        [
+          "An epoch is one full pass through the dataset.",
+          0.22581136226654053
+        ],
+        [
+          "AI can classify images using convolutional networks.",
+          0.2108013778924942
+        ],
+        [
+          "Dropout improves generalization in neural networks.",
+          0.20932097733020782
+        ]
+      ],
+      "euclidean": [
+        [
+          "AI can generate realistic images using GANs.",
+          0.9827060699462891
+        ],
+        [
+          "AI can segment images pixel by pixel.",
+          1.2376536130905151
+        ],
+        [
+          "An epoch is one full pass through the dataset.",
+          1.2443381547927856
+        ],
+        [
+          "AI can classify images using convolutional networks.",
+          1.2563427686691284
+        ],
+        [
+          "Dropout improves generalization in neural networks.",
+          1.2575205564498901
+        ]
+      ],
+      "tfidf": [
+        [
+          "AI can extract keywords from documents.",
+          0.0
+        ],
+        [
+          "AI can analyze sentiment in text.",
+          0.0
+        ],
+        [
+          "AI can generate realistic images using GANs.",
+          0.0
+        ],
+        [
+          "AI can segment images pixel by pixel.",
+          0.0
+        ],
+        [
+          "AI can detect objects in photos.",
+          0.0
+        ]
+      ],
+      "embedding": [
+        [
+          "AI can generate realistic images using GANs.",
+          0.5171443223953247
+        ],
+        [
+          "AI can segment images pixel by pixel.",
+          0.23410673439502716
+        ],
+        [
+          "An epoch is one full pass through the dataset.",
+          0.22581139206886292
+        ],
+        [
+          "AI can classify images using convolutional networks.",
+          0.210801362991333
+        ],
+        [
+          "Dropout improves generalization in neural networks.",
+          0.20932099223136902
+        ]
+      ]
+    },
+    "status": "ok",
+    "ifsuccess": true,
+    "reason": ""
   }
 ]
