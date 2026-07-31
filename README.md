@@ -17,58 +17,61 @@ The application lets users submit a natural-language query and view multiple ret
 - Embedding search similarity
 
 ## Project Structure
-Copied from Powershell.
+Copied from Powershell.(Newest vertion)
 ```text
 D:.
-│  app.py
-│  dataset.txt
-│  prompt_filter.py
-│  README.md
-│  requirements.txt
-│  Week21_Theory_Assignment.docx
-│
-├─static
-│      app.css
-│      app.js
-│
-├─templates
-│      index.html
-│
-├─tests
-│  │  test_product_flow.py
-│  │  test_search.py
-│  │
-│  └─fixtures
-│          sample_queries.json
-│
-└─Week21_Engineering
-    ├─Implementation1
-    │  └─Similarity_Engine
-    │          similarity.py
-    │
-    ├─Implementation2
-    │  └─TFIDF_Retrieval
-    │          tfidf_search.py
-    │
-    ├─Implementation3
-    │  └─Embedding_Similarity
-    │          embedding_similarity.py
-    │
-    ├─Implementation4
-    │  └─Vector_Search
-    │          vector_search.py
-    │
-    ├─Implementation5
-    │  └─Embedding_Search
-    │          embedding_search.py
-    │
-    ├─Implementation6
-    │  └─Gradient_Descent
-    │          gradient_descent_demo.py
-    │
-    └─Implementation7
-        └─Embedding_Failure_Analysis
-                embedding_failure_analysis.py
+├── README.md
+├── Week21_Engineering
+│   ├── Implementation1
+│   │   └── Similarity_Engine
+│   │       └── similarity.py
+│   ├── Implementation2
+│   │   └── TFIDF_Retrieval
+│   │       └── tfidf_search.py
+│   ├── Implementation3
+│   │   └── Embedding_Similarity
+│   │       └── embedding_similarity.py
+│   ├── Implementation4
+│   │   └── Vector_Search
+│   │       └── vector_search.py
+│   ├── Implementation5
+│   │   └── Embedding_Search
+│   │       └── embedding_search.py
+│   ├── Implementation6
+│   │   └── Gradient_Descent
+│   │       └── gradient_descent_demo.py
+│   ├── Implementation7
+│   │   └── Embedding_Failure_Analysis
+│   │       └── embedding_failure_analysis.py
+│   └── shared
+│       └── shared.py
+├── app.py
+├── dataset.json
+├── example 1.png
+├── example 2.png
+├── example 3.png
+├── example 4.png
+├── example 5.png
+├── proof 1.png
+├── proof 2.png
+├── fix error(just for checking and show how it work).py
+├── project reflection.md
+├── prompt_filter.py
+├── record.py
+├── requirements.txt
+├── security_report.md
+├── static
+│   ├── app.css
+│   └── app.js
+├── templates
+│   └── index.html
+├── tests
+│   ├── fixtures
+│   │   └── sample_queries.json
+│   ├── test_product_flow.py
+│   └── test_search.py
+├── timeline.json
+└── unfilted_test.py
 ```
 
 ## Installation
@@ -101,7 +104,12 @@ The current implementation uses a deterministic fallback embedding strategy when
 ## Prompt Filtering
 
 Added a strong pronpt filtering including, hidden symbels, random symbels and promopt ignoring, also a comparation of the system before filtering and system after filtering.  
-The result increase from 50% to 100%
+The result increase from 50% to 100%.(prompt_filter 100%, infilted_test 50%, see in picture proof 1 and proof 2 that contains 4 harmful text and 4 safe text for testing.)
 
 ## Testing Result
 There is 5 pictures showing the result, named example 1, 2, 3, 4 and 5
+
+## Embedding backend:
+There are two models:
+- sentence-transformers/all-MiniLM-L6-v2
+- deterministic fallback
