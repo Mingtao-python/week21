@@ -1,95 +1,98 @@
 # Project Report
 ## Model Analysis Report
-1. Why is Embedding important and efficient?
-Because Embedding can catch similar/related words, making semantic search more efficient.
-It is able to capture:  
-- Words with similar significent, such as synonyms with very close vector and antonimes with opposite vector.
-- Associate the text with previous content, separating very similar word such as bank and bank.
-- Grammar struction.
-- Relation between different topic.
 
-comparing to matching，Embedding don't require same "words"，but requiring same meaning，so it can process very complicated text.
+1. Sucessful querys
+- The project sucessfully handles queries such as "machine learning", "deap neural networks", "semantic search", "bank", and many more.
+- Tests in `tests/test_search.py` and `tests/test_product_flow.py` verify that all retrieval modules return at least 3 results for these queries.
+- The app is designed to compar TF-IDF, cosine similarity, and embedding-style search side by side.
 
-2. Why can Embedding sometimes fail?
-Main reason of embedding failing is because:
+2. Query failures
+- Failures are mainly caused by ambiguous queries and limited dataset coverage.
+- Example: the query "bank" can mean financial institution or river bank, so the result set may be inconsistent across TF-IDF and embedding search.
+- Another failure factor is sparse data in `dataset.json`, which makes top-K results unstable for some domain-specific queries.
 
-- Dataset probleme.  
- -> Not enough data.  
- -> Data bias.  
- -> Need the sample information for a spesific topic.  
+3. Model names
+- Embedding model: `sentence-transformers/all-MiniLM-L6-v2`.
+- TF-IDF model: `sklearn.feature_extraction.text.TfidfVectorizer`.
+- The project also includes a deterministic fallback embedding strategy when the pretrained model is unavailable.
 
-- Model probleme
- -> Not enough vectors for the model.  
- -> No enough content.  
- -> Not able to understand same word with different meaning.  
+4. Real scores
+- Embedding search score is computed by dot product between `document_vectors` and the query embedding `qv`.
+- TF-IDF score is computed as `(X * q.T).toarray().flatten()`.
+- Tests verify that search results return float scores and at least 3 ranked documents for each query.
+- This project currently reports retrieval availability rather than precise accuracy or recall metrics.
 
-- Calculating problem
- -> Similarity not good.  
- -> Top‑K not good.  
- -> need remarker to ordernize.  
+5. Polysemy errors
+- Polysemy is a key error mode: words like "bank" have multiple meanings.
+- Embedding search tends to return semantically related documents, while TF-IDF returns keyword-matching documents.
+- When queries are ambiguous and lack context, both search methods can return noisy or mismatched results.
 
-3. Why is Cosine Similarity better for text?
-Because text is a high concentrated mixture of vectors, meaning having a long piece of vector, but Cosine similarity only cares about what is most important thet is the angle.  
-Euclidean is very affected by long vectors, so long text is not kind to Euclidean.  
+6. TF-IDF vs Embedding comparison
+- Core concept
+  - TF-IDF: word frequency with inverse document frequency, based on surface matching.
+  - Embedding: vector representation of semantics, based on meaning and context.
 
-4. TF-IDF vs Embedding 的差异
-项目             TF-IDF               Embedding  
-基础        word frequency         vector thinking  
-依赖词面          a lot              not that much  
-语义理解       not at all                a lot  
-同义词     not able to handle       able to handle  
-多语言     not able to handle       able to handle  
-上下文             no                     yes  
-Embedding is now the core of searching model.  
+- Dependence on exact terms
+  - TF-IDF: strong dependence on exact words appearing in the text.
+  - Embedding: less dependence on exact wording, better at synonyms.
 
-5. 如何提高语义搜索质量？  
-Use a bigger Embedding model  
-Use reranker  
-Use better word "Separator"  
-Add profetional information  
-Use RAG  
-Use FAISS/Milvus  
+- Semantic understanding
+  - TF-IDF: cannot understand synonyms or context.
+  - Embedding: can capture similar meaning and semantic relationships.
+
+- Multilanguage and morphology
+  - TF-IDF: weaker for other languages and word forms.
+  - Embedding: stronger on multilingual and inflected forms.
+
+- Context awareness
+  - TF-IDF: no real context understanding.
+  - Embedding: can reflect sentence-level or paragraph-level semantics.
+
+- Project conclusion
+  - Embedding is stronger for semantic search and fuzzy queries.
+  - TF-IDF is still useful for exact keyword matching and low-data scenarios.
+
+7. How to improve search quality
+- Use a larger or stronger embedding model.
+- Add a reranker to combine TF-IDF and embedding scores.
+- Improve query text preprocessing and separators.
+- Add more professional or domain-specific documents to `dataset.json`.
+- Use RAG for better retrieval augmentation.
+- Use FAISS or Milvus for scalable vector search.
 
 ## Security Analysis Report
-1. Where is the debit of Prompt Injection?  
-Prompt Injection debit  
-User input  
-Outer info  
-RAG content  
 
-2. Prompt Injection attacking route:  
-User → Input → Embedding → Retrieval → LLM → Output  
-Attack is usualy in：  
-- Input  
-- LLM  
-Embedding is bot following the rule, but changing the rule into vectors and affect final result.  
+1. Source of prompt injection risk
+- User input.
+- External context or metadata.
+- RAG content returned from retrieval.
 
-3. Why can attack be sometimes success?  
-Bacause LLM can:  
-- Follow user prompt  
-- Cannot separate good prompt and bad prompt  
-- Cannot separate system prompt and user prompt  
-- Cannot dicide wether to believe or not  
+2. Prompt injection attack path
+- User → Input → Embedding → Retrieval → LLM → Output.
+- The main attack surfaces are user input and the LLM prompt itself.
+- Embedding does not enforce rules; it only converts text into vectors and can still influence retrieval.
 
-4. Prompt Filter lower risk?  
-- Prompt Filter can:  
-- Limite input length  
-- Predict bad prompt  
-- Reject bad prompt  
-- Clean input  
-- Protect system Prompt  
-- Stop bad movement  
+3. Why attacks can succeed
+- LLMs often follow prompt instructions.
+- They cannot reliably distinguish between good and malicious text.
+- They cannot consistently separate system prompt from user prompt.
+- They may not know when to trust or ignore injected content.
 
-5. System rest risk:  
-- Filter can only filt basic attack  
-- Cannot filt complicate attack  
-- Cannot filt more than 1 attack  
-- Cannot filt RAG Poisoning  
-- Cannot filt Unicode  
+4. How prompt filtering reduces risk
+- Prompt filtering can limit input length.
+- It can detect and reject obvious malicious or injection-like strings.
+- It can clean input text before retrieval.
+- It can help protect the system prompt and retrieval pipeline.
 
-6. How to improve？      
-- Use more safe safety model  
-- more filtering  
-- limit authority  
-- use better RAG  
-- JSON spying  
+5. Remaining system risk
+- Filters can only block basic attacks.
+- They may fail against complex or subtle prompt injection.
+- They cannot fully prevent attacks that combine multiple vectors.
+- They cannot fully block RAG poisoning or Unicode/encoding tricks.
+
+6. How to improve security
+- Use safer or more robust models.
+- Add more layers of filtering.
+- Limit model authority and the scope of generated responses.
+- Use a better RAG pipeline with source validation.
+- Monitor and defend against structured injection like JSON or special tokens.  
