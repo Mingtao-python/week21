@@ -12,12 +12,13 @@ The application lets users submit a natural-language query and view multiple ret
 - TF-IDF ranking results
 - Cosine similarity comparison
 - Embedding-style retrieval results
-- Simple gradient summury showing how it works, showing its loss, w and b.
+- Simple gradient descent demo showing how it works, including loss, w and b.
 - Failure analysis for ambiguous or out-of-domain queries
 - Embedding search similarity
 
 ## Project Structure
-Copied from Powershell.(Newest vertion)
+
+Copied from PowerShell (Latest version):
 ```text
 D:.
 │  app.py
@@ -98,11 +99,12 @@ The current implementation uses a deterministic fallback embedding strategy when
 
 ## Prompt Filtering
 
-Added a strong pronpt filtering including, hidden symbels, random symbels and promopt ignoring, also a comparation of the system before filtering and system after filtering.  
-The result increase from 50% to 100%.(prompt_filter 100%, infilted_test 50%, see in picture proof 1 and proof 2 that contains 4 harmful text and 4 safe text for testing.)
+Added strong prompt filtering including hidden symbols, random symbols, and prompt injection blocking, with a comparison of system performance before and after filtering.  
+The results improved from 50% to 100% (prompt_filter 100%, filtered_test 50%, see proof 1 and proof 2 which contain 4 harmful prompts and 4 safe prompts for testing).
 
-## Testing Result
-There is 5 pictures showing the result, named example 1, 2, 3, 4 and 5
+## Testing Results
+
+There are 5 images showing the results, named example 1, 2, 3, 4, and 5.
 
 ## Embedding backend:
 There are two models:
