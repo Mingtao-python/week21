@@ -6,9 +6,9 @@ import unittest
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 from app import app
-from src.Implementation2.tfidf_search import tfidf_search
-from src.Implementation4.vector_search import top_k, euclidean_search
-from src.Implementation5.embedding_search import search2
+from Week21_Engineering.Implementation2.TFIDF_Retrieval.tfidf_search import tfidf_search
+from Week21_Engineering.Implementation4.Vector_Search.vector_search import top_k, euclidean_search
+from Week21_Engineering.Implementation5.Embedding_Search.embedding_search import search2
 from prompt_filter import filter_prompt
 
 

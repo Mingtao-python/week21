@@ -90,9 +90,7 @@ Then open http://localhost:5000 and enter a query such as "machine learning", "s
 The repository now includes:
 
 - regression tests in the tests folder
-- a testing report in deliverables/testing_results.md
-- security and model analysis reports in deliverables/
-- a user manual and architecture diagram
+- Included many testing result and report in report/ , such as project reflection, prompt filter result and security_report.
 
 ## Notes
 
@@ -110,3 +108,8 @@ There is 5 pictures showing the result, named example 1, 2, 3, 4 and 5
 There are two models:
 - sentence-transformers/all-MiniLM-L6-v2
 - deterministic fallback
+
+## CI
+Action: Enabled  
+Workflow: .github/workflows/test.yml  
+Actions: pip install -r requirements.txt + pytest  
