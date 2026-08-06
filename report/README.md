@@ -21,55 +21,64 @@ The application lets users submit a natural-language query and view multiple ret
 Copied from PowerShell (Latest version):
 ```text
 D:.
-│  app.py
-│  dataset.txt
-│  prompt_filter.py
-│  README.md
-│  requirements.txt
-│  Week21_Theory_Assignment.docx
-│
-├─static
-│      app.css
-│      app.js
-│
-├─templates
-│      index.html
-│
-├─tests
-│  │  test_product_flow.py
-│  │  test_search.py
-│  │
-│  └─fixtures
-│          sample_queries.json
-│
-└─Week21_Engineering
-    ├─Implementation1
-    │  └─Similarity_Engine
-    │          similarity.py
-    │
-    ├─Implementation2
-    │  └─TFIDF_Retrieval
-    │          tfidf_search.py
-    │
-    ├─Implementation3
-    │  └─Embedding_Similarity
-    │          embedding_similarity.py
-    │
-    ├─Implementation4
-    │  └─Vector_Search
-    │          vector_search.py
-    │
-    ├─Implementation5
-    │  └─Embedding_Search
-    │          embedding_search.py
-    │
-    ├─Implementation6
-    │  └─Gradient_Descent
-    │          gradient_descent_demo.py
-    │
-    └─Implementation7
-        └─Embedding_Failure_Analysis
-                embedding_failure_analysis.py
+├── Week21_Engineering
+│   ├── Implementation1
+│   │   └── Similarity_Engine
+│   │       └── similarity.py
+│   ├── Implementation2
+│   │   └── TFIDF_Retrieval
+│   │       └── tfidf_search.py
+│   ├── Implementation3
+│   │   └── Embedding_Similarity
+│   │       └── embedding_similarity.py
+│   ├── Implementation4
+│   │   └── Vector_Search
+│   │       └── vector_search.py
+│   ├── Implementation5
+│   │   └── Embedding_Search
+│   │       └── embedding_search.py
+│   ├── Implementation6
+│   │   └── Gradient_Descent
+│   │       └── gradient_descent_demo.py
+│   ├── Implementation7
+│   │   └── Embedding_Failure_Analysis
+│   │       └── embedding_failure_analysis.py
+│   └── shared
+│       └── shared.py
+├── __init__.py
+├── app.py
+├── bin
+│   └── fix error(just for checking and show how it work).py
+├── dataset.json
+├── examples
+│   ├── example 1.png
+│   ├── example 2.png
+│   ├── example 3.png
+│   ├── example 4.png
+│   └── example 5.png
+├── my work.md
+├── prompt_filter.py
+├── record.py
+├── report
+│   ├── README.md
+│   ├── project reflection.md
+│   ├── prompt filter result.md
+│   ├── proof 1.png
+│   ├── proof 2.png
+│   └── security_report.md
+├── requirements.txt
+├── static
+│   ├── app.css
+│   └── app.js
+├── templates
+│   └── index.html
+├── tests
+│   ├── fixtures
+│   │   └── sample_queries.json
+│   ├── test_product_flow.py
+│   └── test_search.py
+├── timeline.json
+└── unfilted_test.py
 ```
 
 ## Installation
