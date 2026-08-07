@@ -18,9 +18,10 @@ The application lets users submit a natural-language query and view multiple ret
 
 ## Project Structure
 
-Copied from PowerShell (Latest version):
+Copied from PowerShell (Latest version, really!!!):
 ```text
 D:.
+├── README.md
 ├── Week21_Engineering
 │   ├── Implementation1
 │   │   └── Similarity_Engine
@@ -48,7 +49,8 @@ D:.
 ├── __init__.py
 ├── app.py
 ├── bin
-│   └── fix error(just for checking and show how it work).py
+│   ├── fix error(just for checking and show how it work).py
+│   └── my work.md
 ├── dataset.json
 ├── examples
 │   ├── example 1.png
@@ -56,11 +58,9 @@ D:.
 │   ├── example 3.png
 │   ├── example 4.png
 │   └── example 5.png
-├── my work.md
 ├── prompt_filter.py
 ├── record.py
 ├── report
-│   ├── README.md
 │   ├── project reflection.md
 │   ├── prompt filter result.md
 │   ├── proof 1.png
