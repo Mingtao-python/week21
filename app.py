@@ -1,8 +1,9 @@
+import threading
+import os
+import time
 from flask import Flask, render_template, request
-
 from prompt_filter import filter_prompt
 from record import add_record
-
 from Week21_Engineering.Implementation1.Similarity_Engine.similarity import cosine_similarity, euclidean_distance
 from Week21_Engineering.Implementation2.TFIDF_Retrieval.tfidf_search import search as tfidf_search
 from Week21_Engineering.Implementation3.Embedding_Similarity.embedding_similarity import cosine as full_matrix
@@ -61,5 +62,15 @@ def index():
         failure_cases=[]
     )
 
+import threading
+import os
+
+def auto_exit_after_20_minutes():
+    time.sleep(20 * 60)
+    print("Time limit reached. Shutting down Flask server...")
+    os._exit(0)
+
 if __name__ == "__main__":
+    timer_thread = threading.Thread(target=auto_exit_after_20_minutes, daemon=True)
+    timer_thread.start()
     app.run(debug=False, host="0.0.0.0", port=5000)
