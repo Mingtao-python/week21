@@ -6,7 +6,7 @@ import unittest
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 from app import app
-from Week21_Engineering.Implementation2.TFIDF_Retrieval.tfidf_search import tfidf_search
+from Week21_Engineering.Implementation2.TFIDF_Retrieval.tfidf_search import search as tfidf_search
 from Week21_Engineering.Implementation4.Vector_Search.vector_search import top_k, euclidean_search
 from Week21_Engineering.Implementation5.Embedding_Search.embedding_search import search2
 from prompt_filter import filter_prompt
@@ -32,7 +32,7 @@ class ProductFlowTests(unittest.TestCase):
 
     def test_search_modules_return_ranked_results(self):
         for item in self.queries:
-            tfidf_results = tfidf_search(item["query"], top_k=5)
+            tfidf_results = tfidf_search(item["query"], k=5)
             cosine_results = top_k(item["query"], k=5)
             euclidean_results = euclidean_search(item["query"], k=5)
             embedding_results = search2(item["query"], k=5)

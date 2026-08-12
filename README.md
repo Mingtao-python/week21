@@ -20,9 +20,18 @@ The UI displays all four rankings side by side so users can compare result stabi
 - Euclidean Top-5 ranking
 - Embedding Top-5 ranking
 - Side-by-side ranking comparison for algorithm analysis
-- Multilingual query support for Chinese, Spanish, English, and other Unicode text
-- Prompt filter that blocks control characters, zero-width characters, and suspicious bypass patterns
-- Linux-compatible CI with full pytest execution
+- Multilingual query support for Chinese, Spanish, French, English, and other Unicode text
+- Prompt filter that rejects control characters, zero-width characters, direct bypass phrases, and suspicious instruction-target combinations
+- Machine-readable results for 20 queries across TF-IDF, Cosine, Euclidean, and Embedding
+- Linux-compatible CI with pinned dependencies and full pytest execution
+
+## How the algorithms compare
+
+- Cosine similarity returns higher values for more similar vectors.
+- Euclidean distance returns lower distance values for closer vectors.
+- TF-IDF ranks by term relevance and inverse document frequency.
+- Embedding search ranks by semantic similarity from sentence embeddings.
+- Differences between Cosine and Euclidean often reflect normalization and ranking direction.
 
 ## Repository structure
 
@@ -49,6 +58,7 @@ The UI displays all four rankings side by side so users can compare result stabi
 │   ├── project reflection.md
 │   ├── prompt filter result.md
 │   ├── security_analysis.md
+│   ├── security_report.md
 │   ├── testing_results.md
 │   └── user_manual.md
 ├── static/
@@ -68,3 +78,13 @@ The UI displays all four rankings side by side so users can compare result stabi
 ├── timeline.json
 └── bin/
     ├── development_notes.md
+
+## Python and CI
+
+- Validated on Python 3.12 and Ubuntu Linux
+- CI runs `pip install -r requirements.txt` and `python -m pytest tests -q`
+
+## Notes
+
+- The prompt filter is intentionally permissive for Unicode input and only rejects known injection patterns, control characters, and zero-width hidden text.
+- The repository includes a machine-readable 20-query results file at `tests/results_20_queries.json` for reproducible validation.
